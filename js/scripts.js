@@ -52,7 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Message Us Form Validation & Show Preview
 const messageForm = document.getElementById('messageForm');
+const messagePreview = document.getElementById('messagePreview');
 if (messageForm) {
+  if (messagePreview) messagePreview.style.display = 'none';
   messageForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const nama = document.getElementById('formNama').value.trim();
@@ -70,6 +72,7 @@ if (messageForm) {
     document.getElementById('previewTgl').textContent = tgl;
     document.getElementById('previewGender').textContent = gender;
     document.getElementById('previewPesan').textContent = pesan;
+    if (messagePreview) messagePreview.style.display = 'block';
   });
 }
 
@@ -98,3 +101,26 @@ if (popupImgs && imgModal && imgModalImg && imgModalClose) {
     }
   });
 }
+
+// Auto-scroll untuk banner/slideshow
+let autoSlideInterval = null;
+function startAutoSlide() {
+  if (autoSlideInterval) clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(function() {
+    plusSlides(1);
+  }, 4000);
+}
+// Mulai auto-slide saat halaman dimuat
+startAutoSlide();
+// Reset timer jika user klik next/prev
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+if (prevBtn) prevBtn.addEventListener('click', startAutoSlide);
+if (nextBtn) nextBtn.addEventListener('click', startAutoSlide);
+
+function toggleMenu() {
+  const nav = document.querySelector("nav");
+  nav.classList.toggle("active");
+}
+
+

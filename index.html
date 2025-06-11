@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Latihan</title>
+    <title>Portfolio Fauzan</title>
+    <!--menghubungkan index dengan style css-->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -27,23 +28,21 @@
             </nav>
         </div>
     </header>
-
+    <main>
     <!-- Home Section -->
-    <section id="home" class="home-section" style="padding:0;max-width:none;background:none;box-shadow:none;">
+    <section id="home" class="home-section">
       <div class="banner-wrapper">
         <div class="slideshow-container wide-banner">
           <div class="slide active">
             <img src="assets/1.jpg" alt="Slide 1">
             <div class="banner-center-text">
-              <h2 id="welcomeTitle">Hi Harfi, Welcome To Website</h2>
+              <h2 id="welcomeTitle">Hi Fauzan, Welcome To Website</h2>
               <p>Ini adalah website Portfolio Fauzan</p>
             </div>
           </div>
           <div class="slide">
             <img src="assets/2.jpg" alt="Slide 2">
             <div class="banner-center-text">
-              <h2>Hi Harfi, Welcome To Website</h2>
-              <p>Ini adalah website Portfolio Fauzan</p>
             </div>
           </div>
           
@@ -57,16 +56,24 @@
 
     <!-- Our Profile Section -->
     <section id="profile" class="profile-section">
-      <div class="profile-container vertical-profile">
-        <div class="profile-photo">
-          <img src="assets/profil_zan.png" alt="Foto Profil" />
+      <div class="profile-card">
+        <div class="profile-container vertical-profile">
+          <div class="profile-photo">
+            <img src="assets/profil_zan.png" alt="Foto Profil" />
+          </div>
+          <div class="profile-info">
+            <h3>Nama: Fauzan Azhima</h3>
+            <p>Sekolah: STMIK PONTIANAK</p>
+            <p>Pengalaman: 1 Tahun di dunia Branding Clothing</p>
+            <p>Email: mentozz@gmail.com</p>
+            <p>Alamat: Tabrani Ahmad</p>
+          </div>
         </div>
-        <div class="profile-info">
-          <h3>Nama: Fauzan Harfi</h3>
-          <p>Sekolah: SMK Negeri 1 Contoh</p>
-          <p>Pengalaman: 2 Tahun di bidang Web Development</p>
-          <p>Email: fauzan@email.com</p>
-          <p>Alamat: Jl. Contoh No. 123, Kota Contoh</p>
+        <div>
+          <p>Saya adalah seorang mahasiswa yang sedang menempuh pendidikan S1 di STMIK Pontianak jurusan Sistem Informasi. 
+            Saya memiliki ketertarikan dalam bidang desain pakaian khususnya t-shirt dan juga pembuatan website, 
+            yang awalnya sekedar untuk menambah uang saku, hingga pada akhirnya saya memutuskan untuk mendalami dunia desain grafis dan web developer.
+          </p>
         </div>
       </div>
     </section>
@@ -81,7 +88,7 @@
         </div>
         <div class="achievement-item">
           <img src="assets/Clothing.jpg" alt="Project 2" class="popup-img" data-img="assets/Clothing.jpg">
-          <p>Company Profile</p>
+          <p>Clothing Design</p>
         </div>
         <div class="achievement-item">
           <img src="assets/web-online.png" alt="Project 3" class="popup-img" data-img="assets/web-online.png">
@@ -90,30 +97,11 @@
       </div>
     </section>
 
-    <!-- Facilitation Section -->
-    <section id="facilities" class="facilities-section">
-        <h3>Our Facilitation</h3>
-        <div class="facility-list">
-            <div class="facility-item">
-                <div class="circle"></div>
-                <p>Professional Teacher</p>
-            </div>
-            <div class="facility-item">
-                <div class="circle"></div>
-                <p>Sport Field</p>
-            </div>
-            <div class="facility-item">
-                <div class="circle"></div>
-                <p>Classroom</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Message Us Section -->
     <section id="message" class="message-section">
-        <h3>Message Us</h3>
-        <div class="message-container" style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;">
-            <form id="messageForm" style="flex:1;min-width:260px;max-width:400px;">
+        <h3 class="message-title">Message Us</h3>
+        <div class="message-container">
+            <form id="messageForm" class="center-form">
                 <label for="nama">Nama</label>
                 <input type="text" id="formNama" name="nama" required>
 
@@ -134,8 +122,8 @@
                 <button type="submit">Submit</button>
             </form>
 
-            <div class="message-preview" id="messagePreview" style="flex:1;min-width:220px;max-width:350px;background:rgba(34,0,51,0.5);border-radius:12px;padding:24px 18px;margin-top:0;">
-                <h4 style="color:#00f0ff;margin-bottom:12px;">Preview Pesan</h4>
+            <div class="message-preview" id="messagePreview" style="display:none;">
+                <h4 class="preview-title">Preview Pesan</h4>
                 <p>Nama: <span id="previewNama">-</span></p>
                 <p>Tanggal Lahir: <span id="previewTgl">-</span></p>
                 <p>Jenis Kelamin: <span id="previewGender">-</span></p>
@@ -143,19 +131,16 @@
             </div>
         </div>
     </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>Created by fauzan</p>
-    </footer>
-
-    <!-- Popup Modal Input Nama -->
-    <div id="popupNama" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(20,0,40,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;">
-      <div style="background:#1a0449;padding:36px 32px 28px 32px;border-radius:18px;box-shadow:0 0 32px #ff2fd0,0 0 16px #00f0ff;text-align:center;min-width:320px;max-width:90vw;">
-        <h3 style="color:#00f0ff;text-shadow:0 0 8px #ff2fd0,0 0 2px #00f0ff;margin-bottom:18px;">Masukkan Nama Anda</h3>
-        <input type="text" id="inputNama" placeholder="Nama Anda" style="padding:10px 16px;border-radius:8px;border:2px solid #00f0ff;outline:none;font-size:1.1rem;width:80%;max-width:260px;">
-        <br><br>
-        <button id="btnNama" style="padding:10px 28px;border-radius:8px;border:none;background:#00f0ff;color:#1a0449;font-weight:bold;font-size:1.1rem;cursor:pointer;box-shadow:0 0 12px #ff2fd0,0 0 6px #00f0ff;">OK</button>
+     <!-- Popup Modal Input Nama -->
+     <div id="popupNama">
+      <div class="popup-modal-box">
+        <h3>Masukkan Nama Anda</h3>
+        <input type="text" id="inputNama" placeholder="Nama Anda">
+        <div class="popup-btn-wrapper">
+          <button id="btnNama">OK</button>
+        </div>
       </div>
     </div>
 
@@ -164,13 +149,14 @@
       <span class="img-modal-close" id="imgModalClose">&times;</span>
       <img class="img-modal-content" id="imgModalImg" src="" alt="Preview">
     </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>Created by fauzan</p>
+    </footer>
+
 
     <script src="js/scripts.js"></script>
-    <script>
-        function toggleMenu() {
-          const nav = document.querySelector("nav");
-          nav.classList.toggle("active");
-        }
-      </script>
+    
 </body>
 </html>
