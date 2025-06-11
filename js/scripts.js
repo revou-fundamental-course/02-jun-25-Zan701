@@ -72,3 +72,29 @@ if (messageForm) {
     document.getElementById('previewPesan').textContent = pesan;
   });
 }
+
+// Popup modal untuk gambar achievements
+const popupImgs = document.querySelectorAll('.popup-img');
+const imgModal = document.getElementById('imgModal');
+const imgModalImg = document.getElementById('imgModalImg');
+const imgModalClose = document.getElementById('imgModalClose');
+
+if (popupImgs && imgModal && imgModalImg && imgModalClose) {
+  popupImgs.forEach(function(img) {
+    img.addEventListener('click', function() {
+      imgModal.style.display = 'flex';
+      imgModalImg.src = img.getAttribute('data-img');
+      imgModalImg.alt = img.alt;
+    });
+  });
+  imgModalClose.addEventListener('click', function() {
+    imgModal.style.display = 'none';
+    imgModalImg.src = '';
+  });
+  imgModal.addEventListener('click', function(e) {
+    if (e.target === imgModal) {
+      imgModal.style.display = 'none';
+      imgModalImg.src = '';
+    }
+  });
+}
