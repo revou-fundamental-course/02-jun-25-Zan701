@@ -4,20 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Fauzan Azhima</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!--header-->
     <header>
+        <div class="logo">
+            <img src="logo.png" alt="logo">
+        </div>
         <nav>
-            <a href="#home"></a>
+            <a href="#home">Home</a>
             <a href="#profile">Our Profile</a>
-            <a href="#achievements">Achievements</a>
+            <a href="#achievements">Achievement</a>
             <a href="#message">Message Us</a>
         </nav>
     </header>
     <!--main-->
-    <main></main>
+    <main>
+        <!-- Section Sambutan -->
+        <section id="home" class="welcome-section">
+            <h2>Hi Harfi, Welcome To Website</h2>
+            <p>Ini adalah website latihan pertama</p>
+            <div class="banner">
+                <span>1280x478</span>
+            </div>
+        </section>
+        <!-- Our Facilitation -->
+    <!--   <section id="facilitation" class="facilitation-section">
+            <h3>Our Facilitation</h3>
+            <div class="facilities">
+                <div class="facility">
+                    <div class="circle"></div>
+                    <p>Professional Teacher</p>
+                </div>
+                <div class="facility">
+                    <div class="circle"></div>
+                    <p>Sport Field</p>
+                </div>
+                <div class="facility">
+                    <div class="circle"></div>
+                    <p>Classroom</p>
+                </div>
+            </div>
+        </section>-->
+        <!-- Message Us -->
+        <section id="message" class="message-section">
+            <h3>Message Us</h3>
+            <div class="message-container">
+                <form id="messageForm">
+                    <label for="nama">Nama</label>
+                    <input type="text" id="nama" name="nama" required>
+                    <label for="tgl">Tanggal Lahir</label>
+                    <input type="date" id="tgl" name="tgl" required>
+                    <label>Jenis Kelamin</label>
+                    <div class="gender-group">
+                        <input type="radio" id="laki" name="gender" value="Laki-Laki" required>
+                        <label for="laki">Laki-Laki</label>
+                        <input type="radio" id="perempuan" name="gender" value="Perempuan">
+                        <label for="perempuan">Perempuan</label>
+                    </div>
+                    <label for="pesan">Pesan</label>
+                    <textarea id="pesan" name="pesan" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+                <div class="message-preview" id="messagePreview">
+                    <p>Current time: <span id="currentTime">-</span></p>
+                    <p>Nama: <span id="previewNama">-</span></p>
+                    <p>Tanggal Lahir: <span id="previewTgl">-</span></p>
+                    <p>Jenis Kelamin: <span id="previewGender">-</span></p>
+                    <p>Pesan: <span id="previewPesan">-</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
     <!--footer-->
-    <footer></footer>
+    <footer>
+        <p>Created By RevoU</p>
+    </footer>
 </body>
 </html>
