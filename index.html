@@ -11,7 +11,7 @@
     <!-- Header -->
     <header>
             <div class="logo">
-                <img src="logo.png" alt="Logo">
+                <img src="assets/logo.png" alt="Logo">
             </div>
 
             <div class="menu-toggle" onclick="toggleMenu()">
@@ -29,36 +29,30 @@
     </header>
 
     <!-- Home Section -->
-    <section id="home" class="home-section">
-        <h2>Hi Harfi, Welcome To Website</h2>
-        <p>Ini adalah website Portfolio Fauzan</p>
-
-        <!-- Banner Slideshow -->
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="img1.jpg" style="width:100%">
-                <div class="text">Caption Text</div>
+    <section id="home" class="home-section" style="padding:0;max-width:none;background:none;box-shadow:none;">
+      <div class="banner-wrapper">
+        <div class="slideshow-container wide-banner">
+          <div class="slide active">
+            <img src="assets/1.jpg" alt="Slide 1">
+            <div class="banner-center-text">
+              <h2 id="welcomeTitle">Hi Harfi, Welcome To Website</h2>
+              <p>Ini adalah website Portfolio Fauzan</p>
             </div>
-
-            <div class="mySlides fade">
-                <img src="img2.jpg" style="width:100%">
-                <div class="text">Caption Two</div>
+          </div>
+          <div class="slide">
+            <img src="assets/2.jpg" alt="Slide 2">
+            <div class="banner-center-text">
+              <h2>Hi Harfi, Welcome To Website</h2>
+              <p>Ini adalah website Portfolio Fauzan</p>
             </div>
-
-            <div class="mySlides fade">
-                <img src="img3.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          
         </div>
-
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+        <div class="dots" style="text-align:center; margin-top:10px;">
+          <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
         </div>
+      </div>
     </section>
 
     <!-- Facilitation Section -->
@@ -83,13 +77,13 @@
     <!-- Message Us Section -->
     <section id="message" class="message-section">
         <h3>Message Us</h3>
-        <div class="message-container">
-            <form id="messageForm">
+        <div class="message-container" style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;">
+            <form id="messageForm" style="flex:1;min-width:260px;max-width:400px;">
                 <label for="nama">Nama</label>
-                <input type="text" id="nama" name="nama" required>
+                <input type="text" id="formNama" name="nama" required>
 
                 <label for="tgl">Tanggal Lahir</label>
-                <input type="date" id="tgl" name="tgl" required>
+                <input type="date" id="formTgl" name="tgl" required>
 
                 <label>Jenis Kelamin</label>
                 <div class="gender-group">
@@ -100,13 +94,13 @@
                 </div>
 
                 <label for="pesan">Pesan</label>
-                <textarea id="pesan" name="pesan" required></textarea>
+                <textarea id="formPesan" name="pesan" required></textarea>
 
                 <button type="submit">Submit</button>
             </form>
 
-            <div class="message-preview" id="messagePreview">
-                <p>Current time: <span id="currentTime">-</span></p>
+            <div class="message-preview" id="messagePreview" style="flex:1;min-width:220px;max-width:350px;background:rgba(34,0,51,0.5);border-radius:12px;padding:24px 18px;margin-top:0;">
+                <h4 style="color:#00f0ff;margin-bottom:12px;">Preview Pesan</h4>
                 <p>Nama: <span id="previewNama">-</span></p>
                 <p>Tanggal Lahir: <span id="previewTgl">-</span></p>
                 <p>Jenis Kelamin: <span id="previewGender">-</span></p>
@@ -117,10 +111,20 @@
 
     <!-- Footer -->
     <footer>
-        <p>Created by RevoU</p>
+        <p>Created by fauzan</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Popup Modal Input Nama -->
+    <div id="popupNama" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(20,0,40,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;">
+      <div style="background:#1a0449;padding:36px 32px 28px 32px;border-radius:18px;box-shadow:0 0 32px #ff2fd0,0 0 16px #00f0ff;text-align:center;min-width:320px;max-width:90vw;">
+        <h3 style="color:#00f0ff;text-shadow:0 0 8px #ff2fd0,0 0 2px #00f0ff;margin-bottom:18px;">Masukkan Nama Anda</h3>
+        <input type="text" id="inputNama" placeholder="Nama Anda" style="padding:10px 16px;border-radius:8px;border:2px solid #00f0ff;outline:none;font-size:1.1rem;width:80%;max-width:260px;">
+        <br><br>
+        <button id="btnNama" style="padding:10px 28px;border-radius:8px;border:none;background:#00f0ff;color:#1a0449;font-weight:bold;font-size:1.1rem;cursor:pointer;box-shadow:0 0 12px #ff2fd0,0 0 6px #00f0ff;">OK</button>
+      </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
     <script>
         function toggleMenu() {
           const nav = document.querySelector("nav");
